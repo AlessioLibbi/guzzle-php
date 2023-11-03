@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'gmaccario/simple-mvc-php-framework',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '2a4af978dc8f1700bd2283d8174d7a3c61a5c27a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'gmaccario/simple-mvc-php-framework' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '2a4af978dc8f1700bd2283d8174d7a3c61a5c27a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,0 +1,87 @@
+section {
+    background-image: url(../dZrvbz.jpg) !important;
+
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cards {
+    background-image: url(../pokedex.jpeg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    position: relative;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding-bottom: -17px;
+
+    margin-bottom: -17px;
+
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../image001.jpg);
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 1s linear;
+
+}
+.card:hover::before {
+    transform: translateX(18rem) rotateY(180deg);
+    z-index: 14;
+}
+
+.card {
+    border: 3px solid black;
+    padding: 17px;
+    background-color: #9B1220;
+    position: relative;
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.2;
+
+}
+
+ul {
+    padding: 0;
+}
+
+ul>li {
+    list-style-type: none;
+}
+
+.cards>* {
+    position: relative;
+   z-index: 1;
+}
+
+.img-card {
+    background-image: url(../original-42f52449520e8e7940c668566888d84f.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    border-radius: 30px;
+}

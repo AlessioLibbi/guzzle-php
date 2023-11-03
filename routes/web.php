@@ -6,5 +6,5 @@ use Symfony\Component\Routing\RouteCollection;
 // Routes system
 $routes = new RouteCollection();
 
-$routes->add('home', new Route(constant('URL_SUBFOLDER') . '/', array('controller' => 'HomeController', 'method'=>'indexAction'), array()));
+$routes->add('home', new Route(constant('URL_SUBFOLDER') . '/{p}', array('controller' => 'HomeController', 'method'=>'indexAction', 'p' => 1), array()));
 ?>
