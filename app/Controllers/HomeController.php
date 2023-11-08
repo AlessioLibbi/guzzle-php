@@ -9,21 +9,21 @@ use Symfony\Component\Routing\RouteCollection;
 class HomeController
 {
 	// Homepage action
-	public function indexAction( $p ,RouteCollection $routes)
+	public function indexAction($p, RouteCollection $routes)
 	{
 		define('BASE_URI', 'https://pokeapi.co/api/v2/');
 		// Create a client with a base URI
-		$client = new Client();
+		$client = new Client(['verify' => false]);
 		// Send a request to https://foo.com/api/test
-		if(isset($_GET['url'])) {
+		if (isset($_GET['url'])) {
 			$response = $client->request('GET', $_GET['url']);
 		} else {
 			$response = $client->request('GET', BASE_URI . 'pokemon', ['query' => ['limit' => 6]]);
 		}
-		$responseDecoded= json_decode($response->getBody()->getContents(), true);
+		$responseDecoded = json_decode($response->getBody()->getContents(), true);
 
-		$prevLink = $responseDecoded['previous'] ? "/".--$p.'?url='. urlencode($responseDecoded['previous']) : '#';
-		$nextLink = $responseDecoded['next'] ? "/".++$p.'?url='. urlencode($responseDecoded['next']) : '#';
+		$prevLink = $responseDecoded['previous'] ? "/" . --$p . '?url=' . urlencode($responseDecoded['previous']) : '#';
+		$nextLink = $responseDecoded['next'] ? "/" . ++$p . '?url=' . urlencode($responseDecoded['next']) : '#';
 
 		$pokemonList = $responseDecoded['results'];
 		$pokemonArray = [];
@@ -44,6 +44,7 @@ class HomeController
 				'name' => $pokemonData['name'],
 				'abilities' => $abilities,
 				'cover' => $pokemonData['sprites']['front_default'],
+				'id' => $pokemonData['id']
 			);
 		}
 
@@ -63,12 +64,12 @@ class HomeController
 			$abilityDetail = json_decode($response->getBody()->getContents(), true);
 			$pokemonAbilitySingleDetails[$ability_id] = $abilityDetail;
 		}
-		
-		foreach($pokemonArray as &$p) {
-			foreach($p['abilities'] as $ak => &$a ) {
+
+		foreach ($pokemonArray as &$p) {
+			foreach ($p['abilities'] as $ak => &$a) {
 				$a = array_merge($a, $pokemonAbilitySingleDetails[$ak]);
 			}
-		}	
+		}
 
 		require_once APP_ROOT . '/views/home.php';
 	}
