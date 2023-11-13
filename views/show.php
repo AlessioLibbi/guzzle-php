@@ -14,25 +14,45 @@
     <link rel="stylesheet" href="../public/assets/css/style.css">
 </head>
 
-<body>
+<body class="show-bg">
     <?php  ?>
-    <div class="card card-img-top m-3 rounded" style="width: 18rem;">
-        <img class="img-card" src='<?= $pokemon['cover'] ?>' alt='pokemon cover'>
-        <div class="card-body cards">
-            <h3 class="card-title text-capitalize"><?= $pokemon['name'] ?></h3>
-            <ul class="card-text">
+    <div class="poke-card card-img-top m-3 rounded" style="width: 18rem;">
 
-                <li class="abilitylist text-capitalize font-weight-bold">
-                    <?= $ability['name'] ?>
-                </li>
-                <li class="abilitylist text-capitalize font-weight-bold">
-                    <?= $ability['name'] ?>
-                </li>
 
-            </ul>
-            <a href="/">GO</a>
+        <div class="poke-card-body card-single">
+            <div class="poke-background">
+                <img class="poke-img-card" src='<?= $pokemonSingle['cover'] ?>' alt='pokemon cover'>
+            </div>
+            <div class="poke-card-group-text">
+                <h3 class="poke-card-title text-capitalize">Name:<?= $pokemonSingle['name'] ?></h3>
+                <ul class="poke-card-text">
+                    <li class="abilitylist text-capitalize font-weight-bold">
+                        Ability:<?= $pokemonSingle['abilities'][0]['ability']['name'] ?>
+                        <?= $pokemonSingle['abilities'][1]['ability']['name'] ?>
+                    </li>
+                    <li>
+                        Order:<?= $pokemonSingle['order'] ?>
+
+                    </li>
+                    <li>
+                        Altezza:<?= $pokemonSingle['height'] ?>
+
+                    </li>
+                    <li>
+                        Esperienca Base: <?= $pokemonSingle['base_experience'] ?>
+                    </li>
+                </ul>
+                <a href="/">GO</a>
+            </div>
+
+
+        </div>
+        <div class="back-card">
+            <img class="back-card-img" src="../public/assets/retro.jpg" alt="">
         </div>
     </div>
+
+
     <?php  ?>
 
 

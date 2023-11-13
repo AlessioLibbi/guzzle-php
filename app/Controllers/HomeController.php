@@ -22,8 +22,8 @@ class HomeController
 		}
 		$responseDecoded = json_decode($response->getBody()->getContents(), true);
 
-		$prevLink = $responseDecoded['previous'] ? "/" . --$p . '?url=' . urlencode($responseDecoded['previous']) : '#';
-		$nextLink = $responseDecoded['next'] ? "/" . ++$p . '?url=' . urlencode($responseDecoded['next']) : '#';
+		$prevLink = $responseDecoded['previous'] ? "page/" . --$p . '?url=' . urlencode($responseDecoded['previous']) : '#';
+		$nextLink = $responseDecoded['next'] ? "page/" . ++$p . '?url=' . urlencode($responseDecoded['next']) : '#';
 
 		$pokemonList = $responseDecoded['results'];
 		$pokemonArray = [];

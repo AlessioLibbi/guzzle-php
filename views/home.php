@@ -48,10 +48,10 @@
             <?php endforeach; ?>
 
         </div>
-        <a href=" <?php echo $prevLink ?>">
-            <=< /a>
-                <a href="<?php echo $nextLink ?>">=></a>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <a href=" <?php echo $prevLink ?>">Indietro</a>
+
+        <a href="<?php echo $nextLink ?>">Avanti</a>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
 
